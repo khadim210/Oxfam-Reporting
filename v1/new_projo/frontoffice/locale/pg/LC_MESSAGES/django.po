@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-27 19:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:11
+msgid "Nom langue"
+msgstr ""
+
+#: models.py:12
+msgid "Code langue"
+msgstr ""
+
+#: models.py:19 models.py:30
+msgid "Monnaie"
+msgstr ""
+
+#: models.py:20
+msgid "Signe monnaie"
+msgstr ""
+
+#: models.py:27 models.py:39
+msgid "Pays"
+msgstr ""
+
+#: models.py:28
+msgid "Nom complet"
+msgstr ""
+
+#: models.py:29
+msgid "Nom court"
+msgstr ""
+
+#: models.py:31
+msgid "Langue"
+msgstr ""
+
+#: models.py:38
+msgid "user"
+msgstr ""
+
+#: models.py:48
+msgid "Projet"
+msgstr ""
+
+#: models.py:56
+msgid "Montant demandé"
+msgstr ""
+
+#: models.py:57
+msgid "Montant attribué"
+msgstr ""
+
+#: models.py:58 models.py:145 templates/frontoffice/suivi_budget.html:22
+msgid "Montant exécuté"
+msgstr ""
+
+#: models.py:59
+msgid "Montant réstant"
+msgstr ""
+
+#: models.py:66
+msgid "Année comptable"
+msgstr ""
+
+#: models.py:67 models.py:80
+msgid "Code année"
+msgstr ""
+
+#: models.py:72
+msgid "Etat de l'année"
+msgstr ""
+
+#: models.py:79
+msgid "Plan année"
+msgstr ""
+
+#: models.py:82
+msgid "Montant total prévu"
+msgstr ""
+
+#: models.py:90
+msgid "Code mois"
+msgstr ""
+
+#: models.py:91
+msgid "Mois"
+msgstr ""
+
+#: models.py:93
+msgid "cloturé"
+msgstr ""
+
+#: models.py:94
+msgid "ouvert"
+msgstr ""
+
+#: models.py:96
+msgid "Etat du mois"
+msgstr ""
+
+#: models.py:105
+msgid "Code plan mensuel"
+msgstr ""
+
+#: models.py:106
+msgid "Plan mensuel"
+msgstr ""
+
+#: models.py:114
+msgid "Code element mensuel"
+msgstr ""
+
+#: models.py:115
+msgid "Element mensuel"
+msgstr ""
+
+#: models.py:116
+msgid "Montant"
+msgstr ""
+
+#: models.py:123
+msgid "Théme"
+msgstr ""
+
+#: models.py:131
+msgid "Activité"
+msgstr ""
+
+#: models.py:132
+msgid "Date début activité"
+msgstr ""
+
+#: models.py:133
+msgid "Date fin opération"
+msgstr ""
+
+#: models.py:134 models.py:144 templates/frontoffice/suivi_budget.html:21
+msgid "Montant prévu"
+msgstr ""
+
+#: models.py:143 templates/frontoffice/gestion_operation.html:80
+msgid "Ligne budgetaire"
+msgstr ""
+
+#: models.py:152
+msgid "Opération"
+msgstr ""
+
+#: models.py:153 templates/frontoffice/gestion_operation.html:77
+msgid "Date opération"
+msgstr ""
+
+#: models.py:154 templates/frontoffice/gestion_operation.html:81
+msgid "Montant opération"
+msgstr ""
+
+#: models.py:156
+msgid "Note"
+msgstr ""
+
+#: models.py:158
+msgid "Validée"
+msgstr ""
+
+#: models.py:159
+msgid "Soumise"
+msgstr ""
+
+#: models.py:160
+msgid "Rejettée"
+msgstr ""
+
+#: models.py:161 models.py:163
+msgid "Brouillon"
+msgstr ""
+
+#: models.py:163 templates/frontoffice/gestion_operation.html:82
+msgid "Etat soumission"
+msgstr ""
+
+#: models.py:164
+msgid "Reférence paiement"
+msgstr ""
+
+#: models.py:165
+msgid "Numéro reçu"
+msgstr ""
+
+#: models.py:167
+msgid "Caisse"
+msgstr ""
+
+#: models.py:168
+msgid "Banque"
+msgstr ""
+
+#: models.py:170
+msgid "Type d'opération"
+msgstr ""
+
+#: models.py:172
+msgid "Virement"
+msgstr ""
+
+#: models.py:173
+msgid "Cheque"
+msgstr ""
+
+#: models.py:175
+msgid "Type d'opération bancaire"
+msgstr ""
+
+#: models.py:176
+msgid "Référence de l'opération"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:7
+#: templates/frontoffice/gestion_operation.html:12
+#: templates/frontoffice/tableau_de_bord.html:51
+msgid "Gestion Operation"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:8
+#: templates/frontoffice/gestion_operation.html:27
+msgid "Ajouter operation"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:13
+msgid "Info budget"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:15
+msgid "Période en cours :"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:20
+msgid "Budget Restant Ligne :"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:24
+msgid "Choix du Thème"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:35
+msgid "Choix rubrique"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:44
+msgid "Choix ligne"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:54
+msgid "Infos opération"
+msgstr ""
+
+#: templates/frontoffice/ajouter_op_banque.html:58
+msgid "Numéro opération"
+msgstr ""
+
+#: templates/frontoffice/base.html:4
+msgid "Bienvenue"
+msgstr ""
+
+#: templates/frontoffice/base.html:5
+msgid "Oxfam | Connection"
+msgstr ""
+
+#: templates/frontoffice/base.html:6
+msgid "Nom du projet / Pays"
+msgstr ""
+
+#: templates/frontoffice/base.html:7
+msgid "Quitter"
+msgstr ""
+
+#: templates/frontoffice/base.html:8
+msgid "Tableau de bord"
+msgstr ""
+
+#: templates/frontoffice/base.html:9
+msgid "Alerte Opération / Dépassement"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:20
+msgid "Montant des dépenses superieur au montant prévu!"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:31
+msgid "Importer operation"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:44
+msgid "Filtre couleur:"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:51
+msgid "MOIS"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:76
+msgid "Numéro operation"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:78
+msgid "Thème Activité"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:79
+msgid "Rubrique"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:106
+msgid "Valider selection"
+msgstr ""
+
+#: templates/frontoffice/gestion_operation.html:107
+msgid "Supprimer selection"
+msgstr ""
+
+#: templates/frontoffice/login.html:7
+msgid "Bienvenue sur OxFam"
+msgstr ""
+
+#: templates/frontoffice/suivi_budget.html:6
+#: templates/frontoffice/tableau_de_bord.html:53
+msgid "Suivi budget"
+msgstr ""
+
+#: templates/frontoffice/suivi_budget.html:23
+msgid "Montant restant"
+msgstr ""
+
+#: templates/frontoffice/suivi_budget.html:42
+msgid "Total prévu"
+msgstr ""
+
+#: templates/frontoffice/suivi_budget.html:45
+msgid "Total exécuté"
+msgstr ""
+
+#: templates/frontoffice/suivi_budget.html:48
+msgid "Total restant"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:14
+msgid "Dérnieres Operations (Données Dernier Trimestre)"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:18
+msgid "Libelle operation"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:19
+msgid "Date"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:20
+msgid "Ligne budget"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:21
+msgid "Montant operation"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:35
+msgid "Evolution Budget / Theme (courbe)"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:40
+msgid "Evolution Compte Caisse "
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:44
+msgid "Evolution Compte Banque"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:52
+msgid "Generer Etat"
+msgstr ""
+
+#: templates/frontoffice/tableau_de_bord.html:54
+msgid "Statistiques Projets"
+msgstr ""

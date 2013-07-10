@@ -1,0 +1,56 @@
+{% extends "frontoffice/base.html" %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url 'frontoffice.views.suivi_budget' %}">{% trans 'Suivi budget' %}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="col_12">
+        <a href="#" onclick="masquerTab('bq{{ id_tab|add:1 }}',document.getElementById('opbq{{ id_tab|add:1 }}').value,'opbq1');"><span class="col_2 icon-arrow-down fsize30 sourismain" ></span>
+        </a>
+    <table class="sortable striped col_10">
+        <caption>
+            <h6 class="bloc100  blue_menu">Budget Projet n°1</h6>
+        </caption>
+        <thead>
+            <tr class="alt first last ">
+                <th><input type="checkbox" /></th>
+                <th>Theme</th>
+                <th>{% trans 'Montant prévu' %}</th>
+                <th>{% trans 'Montant exécuté' %}</th>
+                <th>{% trans 'Montant restant' %}</th>
+            </tr>
+        </thead>
+        <tbody id="bq{{ id_tab|add:1 }}" >
+        {% for activite in activites %}
+            <tr class="">
+                <td><input type="checkbox" /></td>
+                <td>{{ activite.theme }}</td>
+                <td> {{ activite.montantPrevu }}</td>
+                <td> {{ activite.somme }}F</td>
+                <td>{{ activite.restant }}F</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr class="">
+            <td ></td>
+            <td ></td>
+            <td  class="bordure">
+                {% trans 'Total prévu' %} {{ total_prevu }} Fs
+            </td>
+            <td class="bordure">
+                {% trans 'Total exécuté' %} {{ total_exec }}
+            </td>
+            <td class="bordure">
+                {% trans 'Total restant' %} {{ total_restant }}
+            </td>
+        </tr>
+        </tfoot>
+        <input type="hidden" name="opbq{{ id_tab|add:1 }}" id="opbq{{ id_tab|add:1 }}" value="mask" />
+    </table>
+    <hr>
+    </div>
+{% endblock %}

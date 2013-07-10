@@ -1,0 +1,29 @@
+{% extends "frontoffice/base.html" %}
+
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url 'frontoffice.views.statistique' %}">Statistique</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="col_12">
+
+
+            <table border="0" class="frontoffstat_element_centre">
+                <tr>
+                    <td><input class="largeur_bouton_centre" title="Cliquez pour Detail donnees" type="submit" name="" value="Courbe-Evolution Total Depenses dans le temps"></td>
+                    <td><input class="largeur_bouton_centre" title="Cliquez pour Detail donnees" type="submit" name="" value="Histogramme-Depenses par themes / Quartiles"></td>
+                </tr>
+                <tr>
+                    <td><input class="largeur_bouton_centre" title="Cliquez pour Detail donnees" type="submit" name="" value="Autres a preciser"></td>
+                    <td><input class="largeur_bouton_centre" title="Cliquez pour Detail donnees" type="submit" name="" value="Evolution Perte / Gains Changes"></td>
+                </tr>
+                <tr>
+                    <td><input class="largeur_bouton_centre" title="Cliquez pour Detail donnees" type="submit" name="" value="Evolution Conformite Depenses / Budget par The;e dans le temps"></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+
+    </div>
+{% endblock %}

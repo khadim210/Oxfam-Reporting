@@ -1,0 +1,58 @@
+{% extends "frontoffice/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block breadcrumbs %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="col_12">
+        <div class="col_8">
+            <div class="col_12">
+                <h6>{% trans 'Dérnieres Operations (Données Dernier Trimestre)' as list_op %} {{ list_op }}</h6>
+                <table class="sortable striped" style="width: 100%;">
+                    <thead>
+                        <tr class="alt first last">
+                        <th>{% trans 'Libelle operation' as lib_op %} {{ lib_op }}</th>
+                        <th>{% trans 'Date' %}</th>
+                        <th>{% trans 'Ligne budget' as ligne_budget %} {{ ligne_budget }}</th>
+                        <th>{% trans 'Montant operation' as mont_op %} {{ mont_op }}</th>
+                        </tr>
+                    </thead>
+                    {% for op in operation %}
+                        <tr>
+                            <td>{{ op }}</td>
+                            <td>{{ op.date_operation }}</td>
+                            <td>{{ op.ligne_budget }}</td>
+                            <td>{{ op.somme_operation }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col_12">
+                <h5 class="center">{% trans 'Evolution Budget / Theme (courbe)' as ev_budget %} {{ ev_budget }}</h5>
+                    <div class="chart_container"></div>
+            </div>
+            <hr>
+            <div class="col_6">
+                <h5 class="center">{% trans 'Evolution Compte Caisse ' as ev_compte_caisse %} {{ ev_compte_caisse }}</h5>
+                    <textarea id="evc" class="col_8" style="width: 100%"></textarea><br>
+            </div>
+            <div class="col_6">
+                <h5 class="center">{% trans 'Evolution Compte Banque' as ev_compte_banque %} {{ ev_compte_banque }}</h5>
+                <textarea id="evb" class="col_8" style="width: 100%"></textarea>
+
+            </div>
+        </div>
+        <div class="col_4">
+            <ul style="list-style: none;">
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="{% url 'frontoffice.views.gestion_op' %}">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</a></li>
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="#">{% trans 'Generer Etat' as gen_etat_trans %} {{ gen_etat_trans }}</a></li>
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="{% url 'frontoffice.views.suivi_budget'%}">{% trans 'Suivi budget' as suiv_budg_trans %} {{ suiv_budg_trans }}</a></li>
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="{% url 'frontoffice.views.statistique' %}">{% trans 'Statistiques Projets' as stat_proj %} {{ stat_proj }}</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

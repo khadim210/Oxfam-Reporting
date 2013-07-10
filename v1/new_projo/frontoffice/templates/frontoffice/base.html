@@ -1,0 +1,91 @@
+{% load static %}
+{% load i18n %}
+
+{% trans 'Bienvenue' as message_bienvenue %}
+{% trans "Oxfam | Connection" as the_title %}
+{% trans 'Nom du projet / Pays' as nom_pro %}
+{% trans 'Quitter' as quitter %}
+{% trans 'Tableau de bord' as tableau_de_bord %}
+{% trans 'Alerte Opération / Dépassement' as message_alerte %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        {{ the_title }}
+    </title>
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'style.css' %}" />
+    {% endblock %}
+
+    {% block js %}
+        <script type="text/javascript" src="{% static 'js/jquery-1.9.0.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/tab.js' %}"></script>
+    {% endblock %}
+
+</head>
+
+<body class="width80">
+    {% block header %}
+        <div>
+            <div class="col_12 bgvert">
+                <img  class="col_2 " src="{% static 'img/logo.png' %}" />
+                <span class="col_2 fsize30">OXFAM</span>
+                <img  class="col_2 " src="{% static 'img/logo.png' %}" />
+                <div class="col_2"></div>
+                <div class="col_2">
+                    <span class="col_12"> {{ message_bienvenue }} </span>
+                    <span class="col_6">{{ request.session.first_name }} {{ request.session.last_name|upper }}</span>
+                    <span class="col_12">{{ request.session.projet }} / {{ request.session.pays }} </span>
+                    <span class="col_12">
+                        <form action="/i18n/setlang/" method="post" name="setLang">
+                            {% csrf_token %}
+                            <select name="language" onchange="submit()">
+                                {% for lang in LANGUAGES %}
+                                    <option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>
+                                        <a href="#" onclick="submit();">{{ lang.1 }}</a></option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </span>
+                </div>
+                <div class="col_2" >
+                    <button class="red fright btn btn-primary" id="btn_signout">{{ quitter }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="col_12">
+            <span class="fleft">
+                <ul class="breadcrumbs alt1">
+                {% block breadcrumbs %}
+                    <li><a href="{% url 'frontoffice.views.homepage' %}">{{ tableau_de_bord }}</a></li>
+                {% endblock %}
+                </ul>
+            </span>
+            <span class="fright">
+                {% now "d/m/Y H:i " %}
+            </div>
+            <img class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}"  />
+        </div>
+
+        {% block alerte %}
+            <div class="col_4 fright txtalignright">
+                <div class="notice warning"><i class="icon-remove-sign icon-large"></i> {{ message_alerte }}
+                    <a href="#close" class="icon-remove"></a>
+                </div>
+            </div>
+        {% endblock %}
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+</html>

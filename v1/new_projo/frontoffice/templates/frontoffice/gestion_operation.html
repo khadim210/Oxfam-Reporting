@@ -1,0 +1,111 @@
+{% extends "frontoffice/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/tri_tab.js' %}"></script>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li> <a href="{% url 'frontoffice.views.gestion_op' %}">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</a></li>
+{% endblock %}
+
+{% block alerte %}
+    {% if montant_restant > 0 %}
+    {{ block.super }}
+    {% else %}
+        <div class="col_6 fright txtalignright">
+            <div class="notice error"><i class="icon-remove-sign icon-large"></i> {% trans 'Montant des dépenses superieur au montant prévu!' as alert_trans %} {{ alert_trans }}
+                <a href="#close" class="icon-remove"></a>
+            </div>
+        </div>
+    {% endif %}
+    <div class="col_6 left txtalignleft">
+        <a href="{% url 'frontoffice.views.add_caisse_op' %}" class="btn btn-small">
+          <span class="icon-plus-sign">{% trans 'Ajouter operation' as ajout_op_trans %} {{ ajout_op_trans }}</span>
+        </a>
+
+        <a href="#" class="btn btn-small">
+            {% trans 'Importer operation' as import_op_trans %} {{ import_op_trans }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <div class="col_12">
+        <div class="col_12">
+            <table class="sortable striped" id="op_table">
+                <thead>
+                <tr>
+                    <td colspan="2">
+                        {% trans 'Filtre couleur:' as color%}{{ color }}
+                        <select id="filtre" name="filtre_couleur">
+                            <option value="">Non</option>
+                            <option value="1">Oui</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="tri_mois" id="tri_mois">
+                            <option value="">{% trans 'MOIS' %}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="tri_themes" id="tri_themes">
+                            <option value="">Tous</option>
+                            {% for theme in themes %}
+                                <option value="{{ theme }}">{{ theme }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="tri_etat" id="tri_etat">
+                            <option value="">Tous</option>
+                            <option value="Validée">Validée</option>
+                            <option value="Rejettée">Rejettée</option>
+                            <option value="Soumise">Soumise</option>
+                            <option value="Brouillon">Brouillon</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="alt first last ">
+                    <th><input type="checkbox"></th>
+                    <th>{% trans 'Numéro operation' as num_op_trans %}{{ num_op_trans }}</th>
+                    <th>{% trans 'Date opération' as date_op_trans %}{{ date_op_trans }}</th>
+                    <th>{% trans 'Thème Activité' as activ_them_trans %}{{ activ_them_trans }}</th>
+                    <th>{% trans 'Rubrique' as rubrique_trans%}{{ rubrique_trans }}</th>
+                    <th>{% trans 'Ligne budgetaire' as ligne_budget %}{{ ligne_budget }}</th>
+                    <th>{% trans 'Montant opération' as montant_op_trans%}{{ montant_op_trans }}</th>
+                    <th>{% trans 'Etat soumission' as etat_soum%}{{ etat_soum }}</th>
+                </tr>
+                </thead>
+                <tbody id="bq{{ id_tab|add:1 }}" class="filter_table">
+                {% for op in operation %}
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>{{ op.id }}</td>
+                    <td> {{ op.date_operation }}</td>
+                    <td class="theme">{{ op.ligne_budget.activite }}</td>
+                    <td></td>
+                    <td>{{ op.ligne_budget}}</td>
+                    <td>{{ op.somme_operation }}</td>
+                    <td class="soumission">{% trans op.soumission %}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <input type="hidden" name="opbq{{ id_tab|add:1 }}" id="opbq{{ id_tab|add:1 }}" value="mask" />
+            </table>
+
+        </div>
+    </div>
+
+    <div class="col_4 left txtalignleft">
+        <a href="" class="btn btn-small">{% trans 'Valider selection' %}</a>
+        <a href="" class="btn btn-small">{% trans 'Supprimer selection' %} </a>
+    </div>
+{% endblock %}
