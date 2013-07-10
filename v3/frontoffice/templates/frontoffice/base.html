@@ -1,0 +1,196 @@
+{% load static %}
+{% load i18n %}
+
+{% trans 'Bienvenue' as message_bienvenue %}
+{% trans 'Nom du projet / Pays' as nom_pro %}
+{% trans 'Quitter' as quitter %}
+{% trans 'Tableau de bord' as tableau_de_bord %}
+{% trans 'Alerte Opération / Dépassement' as message_alerte %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>
+        {{ the_title }} | OXFAM
+    </title>
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'style.css' %}" />
+    {% endblock %}
+
+    {% block js %}
+        <script type="text/javascript" src="{% static 'js/jquery-1.9.0.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/tab.js' %}"></script>
+    {% endblock %}
+
+</head>
+
+<body>
+    {% comment %}{% block header %}
+        <div>
+            <div class="col_12 bgvert">
+                <div class="col_8">
+                    <table>
+                    <tr>
+                        <td>
+                            <img  class="col_2 " src="{% static 'img/logo.png' %}" />
+                            <span class="col_2 fsize30">OXFAM</span>
+                            <img  class="col_2 " src="{% static 'img/logo.png' %}" />
+                            <div class="col_2"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="{% url 'frontoffice.views.homepage' %}"><img src="{% static 'images/bouton_accueil.gif' %}" class="frontoffmain_puce"></a>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="{% url 'frontoffice.views.gestion_op' %}"><img src="{% static 'images/operation.png' %}" class="frontoffmain_puce"></a> |
+                            <a href=""><img src="{% static 'images/etats.png' %}" class="frontoffmain_puce"></a> |
+                            <a href="{% url 'frontoffice.views.statistique' %}"><img src="{% static 'images/statistique.png' %}" class="frontoffmain_puce"></a> |
+                            <a href="{% url 'frontoffice.views.suivi_budget'%}"><img src="{% static 'images/budget.png' %}" class="frontoffmain_puce"></a>
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+                <div class="col_2">
+                    <span class="col_12"> {{ message_bienvenue }} </span>
+                    <span class="col_12">{{ request.session.first_name }} {{ request.session.last_name|upper }}</span>
+                    <span class="col_12">{{ request.session.projet }} / {{ request.session.pays }} </span>
+                    <span class="col_12">
+                        <form action="/i18n/setlang/" method="post" name="setLang">
+                            {% csrf_token %}
+                            <select name="language" onchange="submit()">
+                                {% for lang in LANGUAGES %}
+                                    <option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>
+                                        <a href="#" onclick="submit();">{{ lang.1 }}</a></option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </span>
+                </div>
+                <div class="col_2" >
+                    <button class="red fright btn btn-primary" id="btn_signout">{{ quitter }}</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col_12">
+            <span class="fleft">
+                <ul class="breadcrumbs alt1">
+                {% block breadcrumbs %}
+                    <li><a href="{% url 'frontoffice.views.homepage' %}">{{ tableau_de_bord }}</a></li>
+                {% endblock %}
+                </ul>
+            </span>
+            <span class="fright heure">
+                {% now "d/m/Y H:i " %}
+            </span>
+            <img class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}"  />
+        </div>
+
+        {% block alerte %}
+            <div class="col_4 fright txtalignright">
+                <div class="notice warning">
+                    <i class="icon-remove-sign icon-large"></i> {{ message_alerte }}
+                    <a href="#close" class="icon-remove"></a>
+                </div>
+            </div>
+        {% endblock %}
+    {% endblock %}{% endcomment %}
+
+
+    {% block header %}
+        <div class="entete bgvert">
+            <table class="col_12" border="0">
+                <tr>
+                    <td class="logo_oxfam">
+                        <img src="{% static 'images/logo.png' %}">
+                    </td>
+                    <td>OXFAM REPORT Project_Office</td>
+                    <td>
+                        <img src="{% static 'images/logo.png' %}" class="logo_projet">
+                    </td>
+                    <td> {{ message_bienvenue }} <br>
+                        {{ request.session.first_name }} {{ request.session.last_name|upper }}<br>
+                        {{ request.session.projet }} / {{ request.session.pays }} <br>
+                        <form action="/i18n/setlang/" method="post" name="setLang">
+                            {% csrf_token %}
+                            <select name="language" onchange="submit()">
+                                {% for lang in LANGUAGES %}
+                                    <option value="{{ lang.0 }}" {% if lang.0 == request.LANGUAGE_CODE %}selected="selected"{% endif %}>
+                                        <a href="#" onclick="submit();">{{ lang.1 }}</a></option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </td>
+                    <td>
+                        <button class="red fright btn btn-primary" id="btn_signout" type="submit">{{ quitter }}</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{% url 'frontoffice.views.homepage' %}">
+                            <img src="{% static 'images/bouton_accueil.gif' %}" class="frontoffmain_puce">
+                        </a>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td colspan="2">
+                        <a href="{% url 'frontoffice.views.gestion_op' %}">
+                            <img src="{% static 'images/operation.png' %}" class="frontoffmain_puce">
+                        </a>
+                        <a href="#">
+                            <img src="{% static 'images/etats.png' %}" class="frontoffmain_puce">
+                        </a>
+                        <a href="{% url 'frontoffice.views.statistique' %}">
+                            <img src="{% static 'images/statistique.png' %}" class="frontoffmain_puce">
+                        </a>
+                        <a href="{% url 'frontoffice.views.suivi_budget' %}">
+                            <img src="{% static 'images/budget.png' %}" class="frontoffmain_puce">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+        <div class="col_12">
+            <span class="fleft">
+                <ul class="breadcrumbs alt1">
+                    {% block breadcrumbs %}
+                        <li><a href="{% url 'frontoffice.views.homepage' %}">{{ tableau_de_bord }}</a></li>
+                    {% endblock %}
+                </ul>
+            </span>
+            <span class="fright heure">
+                {% now "d/m/Y H:i " %}
+            </span>
+            <img class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}"  />
+        </div>
+
+        {% block alerte %}
+            <div class="col_4 fright txtalignright">
+                <div class="notice warning">
+                    <i class="icon-remove-sign icon-large"></i> {{ message_alerte }}
+                    <a href="#close" class="icon-remove"></a>
+                </div>
+            </div>
+        {% endblock %}
+
+
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+</html>
