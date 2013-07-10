@@ -1,0 +1,171 @@
+{% extends "frontoffice/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block css %}
+    {{ block.super }}
+    <link  href="{% static 'styles/jquery-ui-1.8.21.custom.css' %}" rel="Stylesheet" />
+    <style type="text/css">
+        #targetchart { width: 608px; height: 408px; padding: 4px; }
+        #targetchart h3 { text-align: center; margin: 0; }
+    </style>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/tri_tab.js' %}"></script>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li> <a href="{% url 'frontoffice.views.gestion_op' %}">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</a></li>
+{% endblock %}
+
+{% block alerte %}
+    {% if montant_restant < 0 %}
+    {{ block.super }}
+    {% else %}
+        <div class="col_6 fright txtalignright">
+            <div class="notice error"><i class="icon-remove-sign icon-large"></i> {% trans 'Montant des dépenses superieur au montant prévu!' as alert_trans %} {{ alert_trans }}
+                <a href="#close" class="icon-remove"></a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <div class="col_4 left txtalignleft">
+        <nav>
+                <a href="{% url 'frontoffice.views.add_caisse_op' %}" >
+                    <span class="icon-plus-sign">{% trans 'Ajouter operation caisse' as ajout_op_trans %} {{ ajout_op_trans }}</span>
+                </a><br>
+                <a href="{% url 'frontoffice.views.add_bank_op' %}" >
+                    <span class="icon-plus-sign"> {% trans 'Ajouter operation bancaire' %}</span>
+                </a><br>
+                <a href="#" >
+                    <span class="icon-plus-sign">{% trans 'Importer operation' as import_op_trans %} {{ import_op_trans }}</span>
+                </a>
+        </nav>
+    </div>
+
+    <div class="col_12">
+        <div class="col_12">
+            <table class="sortable striped" id="op_table">
+                <thead>
+                <tr>
+                    <td colspan="2">
+                        {% trans 'Filtre couleur:' as color%}{{ color }}
+                        <select id="filtre" name="filtre_couleur">
+                            <option value="">Non</option>
+                            <option value="1">Oui</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="tri_mois" id="tri_mois">
+                            <option value="">{% trans 'MOIS' %}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="tri_themes" id="tri_themes">
+                            <option value="">Tous</option>
+                            {% for theme in themes %}
+                                <option value="{{ theme.id }}">{{ theme }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="tri_etat" id="tri_etat">
+                            <option value="">Tous</option>
+                            <option value="Validée">Validée</option>
+                            <option value="Rejettée">Rejettée</option>
+                            <option value="Soumise">Soumise</option>
+                            <option value="Brouillon">Brouillon</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="alt first last ">
+                    <th><input type="checkbox"></th>
+                    <th>{% trans 'Numéro operation' %}</th>
+                    <th>{% trans 'Date opération'  %}</th>
+                    <th>{% trans 'Thème Activité' %}</th>
+                    <th>{% trans 'Rubrique' %}</th>
+                    <th>{% trans 'Ligne budgetaire' %}</th>
+                    <th>{% trans 'Montant opération' %}</th>
+                    <th>{% trans 'Etat soumission'%}</th>
+                </tr>
+                </thead>
+                <tbody id="bq{{ id_tab|add:1 }}" class="filter_table">
+                {% for op in operation %}
+                <tr>
+                    <td><input type="checkbox"/></td>
+                    <td><a href="#">{{ op.id }}</a></td>
+                    <td> {{ op.date_operation }}</td>
+                    <td>{{ op.ligne_budget.activite.theme }}</td>
+                    <td class="theme">{{ op.ligne_budget.activite }}</td>
+                    <td>{{ op.ligne_budget}}</td>
+                    <td>{{ op.somme_operation }}</td>
+                    <td class="soumission">{% trans op.soumission %}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <input type="hidden" name="opbq{{ id_tab|add:1 }}" id="opbq{{ id_tab|add:1 }}" value="mask" />
+            </table>
+
+        </div>
+    </div>
+
+    <div class="col_12">
+    <div class="col_5 left txtalignleft">
+        <button class="small green pill fleft  icon-circle-arrow-right" type="submit">Valider Séléction</button>
+        <button class="small green pill fleft  icon-circle-arrow-right" type="submit" >Supprimer Sélection</button>
+    </div>
+
+    <div class="col_1"> </div>
+
+    <div class="col_6">
+        <div class="fright">
+            <div class="col_12">
+                <span class="col_7">Taux Décaissement Mois</span>
+                <span class="notice  col_5" style="clear: none;">xx %</span>
+            </div>
+            <div class="col_12">
+                <span class="col_7">Taux Décaissement Semestre</span>
+                <span class="notice  col_5 " style="clear: none;">xx %</span>
+            </div>
+            <div class="col_12">
+                <span class="col_7">Taux Décaissement Global</span>
+                <span class="notice  col_5" style="clear: none;">xx %</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <img class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}"  />
+
+    <div class="col_4 ">
+
+        <p class="col_6">
+            <span class="icon-download fsize45"> </span>
+            <br/>
+            <span> Générer Etat</span>
+        </p>
+        <p class="col_6">
+            <span class="icon-print fsize45"> </span>
+            <br/>
+            <span> Imprimer Opération </span>
+        </p>
+
+    </div>
+
+    <div class="col_4" style="text-align: center;">
+
+
+        <a href="" > <span class="icon-dashboard fsize45">
+
+        </span> </a><br/>
+        Soumettre Données/Période
+
+    </div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'frontoffice/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li> <a href="{% url 'frontoffice.views.gestion_op' %}">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</a></li>
+    <li><a href="{% url 'frontoffice.views.add_caisse_op' %}">{% trans 'Ajouter operation' as add_op %} {{ add_op }}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="col_12">
+        <span class="col_4"><br />{% trans 'Info budget' as inf_budg_trans %} {{ inf_budg_trans }}</span>
+        <div class="col_4 ">
+            <div class="notice "> {% trans 'Période en cours :' as perio_trans%} {{ perio_trans }} {% now "m / Y" %}</div>
+        </div>
+    </div>
+    <img  class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}"  />
+    <div class="col_12 ">
+        <div class="notice  col_4 fright txtalignright"> {% trans 'Budget Restant Ligne :' as bud_res_trans %} {{ bud_res_trans }} <span id="rest_ligne"></span> F </div>
+    </div>
+    <div class="col_12 ">
+        <div class="col_5 ">
+            <label  class="col_4" for="id_theme"> {% trans 'Choix du Thème' as choix_them %} {{ choix_them }}</label>
+            <select  class="col_7 fright" id="id_theme">
+                <option value="">-- Liste thèmes  --</option>
+                {% for theme in themes %}
+                    <option value="{{ theme.id }}">{{ theme.libelle_theme }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="col_12 ">
+        <div class="col_5 ">
+            <label for="id_rubrique" class="col_4"> {% trans 'Choix rubrique' as ch_rub %} {{ ch_rub }}</label>
+            <select  class="col_7 fright" id="id_rubrique" disabled="disabled">
+                <option value="">-- Liste rubriques  --</option>
+            </select>
+        </div>
+        <div class="col_2">
+        </div>
+        <div class="col_5">
+            <label class="col_4" for="id_ligne"> {% trans 'Choix ligne' as choi_lign %} {{ choi_lign }}</label>
+            <select class="col_7 fright" id="id_ligne" name="ligne_budget_id" disabled="disabled">
+                <option value="">-- Liste lignes budgétaires  --</option>
+            </select>
+        </div>
+    </div>
+    <div id="detail_op">
+        <div class="col_12">
+            <span class="col_4"><br/>{% trans 'Infos opération' as inf_op %} {{ inf_op }}</span>
+        </div>
+        <img  class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}" />
+        <div class="col_12 ">
+            <div class="notice  col_4 fright txtalignright">{% trans 'Numéro opération' as num_op %} {{ num_op }}</div>
+        </div>
+        <div class="col_12">
+            {% if type_op == 'banque' %}
+                <form action="{% url 'frontoffice.views.add_bank_op' %}" method="post" class="center">
+            {% else %}
+                <form action="{% url 'frontoffice.views.add_caisse_op' %}" method="post" class="center">
+            {% endif %}
+                {% csrf_token %}
+                {{ form1.as_p }}
+                <input type="submit" value="Valider" name="Valider"/>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/add_op.js' %}"></script>
+{% endblock %}
+

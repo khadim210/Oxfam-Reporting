@@ -1,0 +1,1646 @@
+[
+{
+    "pk": 1, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "permission", 
+        "name": "permission", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 2, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "group", 
+        "name": "group", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 3, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "user", 
+        "name": "user", 
+        "app_label": "auth"
+    }
+},
+{
+    "pk": 4, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "contenttype", 
+        "name": "content type", 
+        "app_label": "contenttypes"
+    }
+},
+{
+    "pk": 5, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "session", 
+        "name": "session", 
+        "app_label": "sessions"
+    }
+},
+{
+    "pk": 6, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "site", 
+        "name": "site", 
+        "app_label": "sites"
+    }
+},
+{
+    "pk": 7, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "langue", 
+        "name": "langue", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 8, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "monnaie", 
+        "name": "monnaie", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 9, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "countriesinfos", 
+        "name": "countries infos", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 10, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "profile", 
+        "name": "profile", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 11, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "projet", 
+        "name": "projet", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 12, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "budgetprojet", 
+        "name": "budget projet", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 13, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "anneecomptable", 
+        "name": "annee comptable", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 14, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "planannuel", 
+        "name": "plan annuel", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 15, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "mois", 
+        "name": "mois", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 16, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "planmensuel", 
+        "name": "plan mensuel", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 17, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "elementmensuel", 
+        "name": "element mensuel", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 18, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "themes", 
+        "name": "themes", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 19, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "activiteb", 
+        "name": "activite b", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 20, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "lignebudget", 
+        "name": "ligne budget", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 21, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "operation", 
+        "name": "operation", 
+        "app_label": "frontoffice"
+    }
+},
+{
+    "pk": 22, 
+    "model": "contenttypes.contenttype", 
+    "fields": {
+        "model": "logentry", 
+        "name": "log entry", 
+        "app_label": "admin"
+    }
+},
+{
+    "pk": "d1z4lwsoxe4jg7xkge4zgz7t6dlpdmvx", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2013-07-08T17:59:01Z", 
+        "session_data": "OTgwOWY0MGFiMjY4ZWIwOTBiNGYxYzg5MjU4NDBmMjZlNTQ0ODRkMzqAAn1xAS4="
+    }
+},
+{
+    "pk": "iczuqzcnvys1v4a2jarb0ihj969g5cod", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2013-07-08T17:57:07Z", 
+        "session_data": "OTgwOWY0MGFiMjY4ZWIwOTBiNGYxYzg5MjU4NDBmMjZlNTQ0ODRkMzqAAn1xAS4="
+    }
+},
+{
+    "pk": "uoqq8q4n8dn71kyteokcijkrui8i36wy", 
+    "model": "sessions.session", 
+    "fields": {
+        "expire_date": "2013-07-09T00:42:04Z", 
+        "session_data": "YzViZDk3ZjI5OGJmYzc5ODM5YzAyMzAwYzgxZjMxMTJjYmY5ZmEyMTqAAn1xAShVCmZpcnN0X25hbWVYBwAAAEJhYmFjYXJVCWxhc3RfbmFtZVgFAAAAU3lsbGFVDV9hdXRoX3VzZXJfaWSKAQFVBmxhbmd1ZWNjb3B5X3JlZwpfcmVjb25zdHJ1Y3RvcgpxAmNmcm9udG9mZmljZS5tb2RlbHMKTGFuZ3VlCnEDY19fYnVpbHRpbl9fCm9iamVjdApxBE6HUnEFfXEGKFULY29kZV9sYW5ndWVxB1gCAAAAZnJVBl9zdGF0ZXEIY2RqYW5nby5kYi5tb2RlbHMuYmFzZQpNb2RlbFN0YXRlCnEJKYFxCn1xCyhVBmFkZGluZ3EMiVUCZGJxDVUHZGVmYXVsdHEOdWJVAmlkcQ+KAQNVCm5vbV9sYW5ndWVxEFgJAAAARnJhbsOnYWlzdWJVBHBheXNoAmNmcm9udG9mZmljZS5tb2RlbHMKQ291bnRyaWVzSW5mb3MKcRFoBE6HUnESfXETKFUKc2hvcnRfbmFtZXEUWAcAAABDT1NZREVQVQdjb3VudHJ5cRVYBwAAAFNlbmVnYWxoCGgJKYFxFn1xFyhoDIloDWgOdWJVCWxhbmd1ZV9pZHEYigEDVQtjdXJyZW5jeV9pZHEZigEBVQ1jb21wbGV0ZV9uYW1lcRpYUQAAAENvYWxpdGlvbiBkZXMgT3JhZ2FuaXNhdGlvbnMgZW4gU3luZXJnaWUgcG91ciBsYSBEw6lmZW5zZSBkZSBsJ0VkdWNhdGlvbiBQdWJsaXF1ZWgPigECdWJVEl9hdXRoX3VzZXJfYmFja2VuZFUpZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmRVBnByb2pldFgHAAAAQ09TWURFUFUPZGphbmdvX2xhbmd1YWdlWAIAAABmcnEbdS4="
+    }
+},
+{
+    "pk": 1, 
+    "model": "sites.site", 
+    "fields": {
+        "domain": "example.com", 
+        "name": "example.com"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "fr", 
+        "nom_langue": "Fran\u00e7ais"
+    }
+},
+{
+    "pk": 4, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "en", 
+        "nom_langue": "English"
+    }
+},
+{
+    "pk": 5, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "pg", 
+        "nom_langue": "Portugese"
+    }
+},
+{
+    "pk": 6, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "es", 
+        "nom_langue": "Espaniol"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.monnaie", 
+    "fields": {
+        "nom_devise": "Franc CFA", 
+        "signe": "F CFA"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.countriesinfos", 
+    "fields": {
+        "langue": 3, 
+        "country": "Senegal", 
+        "complete_name": "Coalition des Oraganisations en Synergie pour la D\u00e9fense de l'Education Publique", 
+        "short_name": "COSYDEP", 
+        "currency": 1
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.projet", 
+    "fields": {
+        "nom_de_code": "Developpement des TIC"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.budgetprojet", 
+    "fields": {
+        "project": 1, 
+        "montantExecute": 0, 
+        "montantDemande": 100000000, 
+        "montantAttribue": 90000000, 
+        "montantRestant": 90000000
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.anneecomptable", 
+    "fields": {
+        "etat": "ouverte", 
+        "libelle_annee": "Ann\u00e9e 2013", 
+        "code_annee": "2013"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.planannuel", 
+    "fields": {
+        "montant_total_prevu": 90000000, 
+        "libelle_annee": "PlanAnn\u00e9e 2013", 
+        "budgetProjet": 1, 
+        "code_annee": "PA2013"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.mois", 
+    "fields": {
+        "etat": "ouvert", 
+        "annee": 1, 
+        "code_mois": "JN2013", 
+        "libelle_mois": "Juin"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.mois", 
+    "fields": {
+        "etat": "ouvert", 
+        "annee": 1, 
+        "code_mois": "MAI2013", 
+        "libelle_mois": "MAI"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.mois", 
+    "fields": {
+        "etat": "ouvert", 
+        "annee": 1, 
+        "code_mois": "JL2013", 
+        "libelle_mois": "Juillet"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.planmensuel", 
+    "fields": {
+        "libelle": "Libelle du mois de juin", 
+        "annee_comptable": 1, 
+        "code": "CPMJUIN2013", 
+        "mois": 1
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.elementmensuel", 
+    "fields": {
+        "code": "EMJUIN2013", 
+        "libelle_element_mensuel": "Depense technques ", 
+        "planmensuel": 1, 
+        "montant": 20000000.0
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.elementmensuel", 
+    "fields": {
+        "code": "EM1JUIN2013", 
+        "libelle_element_mensuel": "Invesstissements ressources humaines", 
+        "planmensuel": 1, 
+        "montant": 10000000.0
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Participation politique"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Sensibilisation du public & renforcement de la coalition"
+    }
+},
+{
+    "pk": 4, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Initiatives de recherche, de suivi et de plaidoyer de haut niveau"
+    }
+},
+{
+    "pk": 5, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Apprentissage transfrontalier et cr\u00e9ation de r\u00e9seaux pour le changement "
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.activiteb", 
+    "fields": {
+        "libelle_activite": "Achat materiels informatiques", 
+        "theme": 4, 
+        "dateDebut": "2013-06-24", 
+        "dateFin": "2013-06-20", 
+        "montantPrevu": 15000000
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.activiteb", 
+    "fields": {
+        "libelle_activite": "Formation des futurs formateurs", 
+        "theme": 3, 
+        "dateDebut": "2013-06-24", 
+        "dateFin": "2013-07-14", 
+        "montantPrevu": 10000000
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.lignebudget", 
+    "fields": {
+        "montantExecute": 14000000, 
+        "elementPlanMensuel": 1, 
+        "activite": 1, 
+        "libelle_ligne": "Ligne budget depense technique", 
+        "montantPrevu": 15000000
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.lignebudget", 
+    "fields": {
+        "montantExecute": 9600000, 
+        "elementPlanMensuel": 2, 
+        "activite": 2, 
+        "libelle_ligne": "Voyage de formation", 
+        "montantPrevu": 10000000
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "type_operation_bancaire": "Virement", 
+        "reference_paiement": "RFT-1223", 
+        "date_operation": "2013-06-03", 
+        "numRecu": 123, 
+        "memo": "passport, visites medicales...", 
+        "somme_operation": 500000, 
+        "libelle_operation": "Demarche papiers et titre de voyage", 
+        "ligne_budget": 2, 
+        "reference_operation": "123-TRE", 
+        "type_operation": "Caisse"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "type_operation_bancaire": "Cheque", 
+        "reference_paiement": "EDS-122", 
+        "date_operation": "2013-06-24", 
+        "numRecu": 954, 
+        "memo": "air france", 
+        "somme_operation": 3500000, 
+        "libelle_operation": "Achat billets pour voyage", 
+        "ligne_budget": 2, 
+        "reference_operation": "1234-4432-433", 
+        "type_operation": "Banque"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "type_operation_bancaire": "Virement", 
+        "reference_paiement": "HT-SDS", 
+        "date_operation": "2013-06-24", 
+        "numRecu": 987, 
+        "memo": "paiement a lavance", 
+        "somme_operation": 4000000, 
+        "libelle_operation": "Reservation hotel Las grandes villas des reposs", 
+        "ligne_budget": 2, 
+        "reference_operation": "123455667-GFD", 
+        "type_operation": "Banque"
+    }
+},
+{
+    "pk": 4, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "type_operation_bancaire": "Cheque", 
+        "reference_paiement": "121-REZZ", 
+        "date_operation": "2013-06-24", 
+        "numRecu": 8888, 
+        "memo": "visites, contacts des grands fournisseurs", 
+        "somme_operation": 30000, 
+        "libelle_operation": "Prospection march\u00e9 des distributeurs", 
+        "ligne_budget": 1, 
+        "reference_operation": "0987654", 
+        "type_operation": "Caisse"
+    }
+},
+{
+    "pk": 5, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "type_operation_bancaire": "Virement", 
+        "reference_paiement": "ZEZEEDS-122", 
+        "date_operation": "2013-06-06", 
+        "numRecu": 5555, 
+        "memo": "icore7, 64go ram, disk ssd 1To", 
+        "somme_operation": 5000000, 
+        "libelle_operation": "Achats serveurs intel px-12", 
+        "ligne_budget": 1, 
+        "reference_operation": "MLKJG-4332-TRE", 
+        "type_operation": "Banque"
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_permission", 
+        "name": "Can add permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_permission", 
+        "name": "Can change permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 3, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_permission", 
+        "name": "Can delete permission", 
+        "content_type": 1
+    }
+},
+{
+    "pk": 4, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_group", 
+        "name": "Can add group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 5, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_group", 
+        "name": "Can change group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 6, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_group", 
+        "name": "Can delete group", 
+        "content_type": 2
+    }
+},
+{
+    "pk": 7, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_user", 
+        "name": "Can add user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 8, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_user", 
+        "name": "Can change user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 9, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_user", 
+        "name": "Can delete user", 
+        "content_type": 3
+    }
+},
+{
+    "pk": 10, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_contenttype", 
+        "name": "Can add content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 11, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_contenttype", 
+        "name": "Can change content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 12, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_contenttype", 
+        "name": "Can delete content type", 
+        "content_type": 4
+    }
+},
+{
+    "pk": 13, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_session", 
+        "name": "Can add session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 14, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_session", 
+        "name": "Can change session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 15, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_session", 
+        "name": "Can delete session", 
+        "content_type": 5
+    }
+},
+{
+    "pk": 16, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_site", 
+        "name": "Can add site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 17, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_site", 
+        "name": "Can change site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 18, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_site", 
+        "name": "Can delete site", 
+        "content_type": 6
+    }
+},
+{
+    "pk": 19, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_langue", 
+        "name": "Can add langue", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 20, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_langue", 
+        "name": "Can change langue", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 21, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_langue", 
+        "name": "Can delete langue", 
+        "content_type": 7
+    }
+},
+{
+    "pk": 22, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_monnaie", 
+        "name": "Can add monnaie", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 23, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_monnaie", 
+        "name": "Can change monnaie", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 24, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_monnaie", 
+        "name": "Can delete monnaie", 
+        "content_type": 8
+    }
+},
+{
+    "pk": 25, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_countriesinfos", 
+        "name": "Can add countries infos", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 26, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_countriesinfos", 
+        "name": "Can change countries infos", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 27, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_countriesinfos", 
+        "name": "Can delete countries infos", 
+        "content_type": 9
+    }
+},
+{
+    "pk": 28, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_profile", 
+        "name": "Can add profile", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 29, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_profile", 
+        "name": "Can change profile", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 30, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_profile", 
+        "name": "Can delete profile", 
+        "content_type": 10
+    }
+},
+{
+    "pk": 31, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_projet", 
+        "name": "Can add projet", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 32, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_projet", 
+        "name": "Can change projet", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 33, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_projet", 
+        "name": "Can delete projet", 
+        "content_type": 11
+    }
+},
+{
+    "pk": 34, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_budgetprojet", 
+        "name": "Can add budget projet", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 35, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_budgetprojet", 
+        "name": "Can change budget projet", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 36, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_budgetprojet", 
+        "name": "Can delete budget projet", 
+        "content_type": 12
+    }
+},
+{
+    "pk": 37, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_anneecomptable", 
+        "name": "Can add annee comptable", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 38, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_anneecomptable", 
+        "name": "Can change annee comptable", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 39, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_anneecomptable", 
+        "name": "Can delete annee comptable", 
+        "content_type": 13
+    }
+},
+{
+    "pk": 40, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_planannuel", 
+        "name": "Can add plan annuel", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 41, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_planannuel", 
+        "name": "Can change plan annuel", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 42, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_planannuel", 
+        "name": "Can delete plan annuel", 
+        "content_type": 14
+    }
+},
+{
+    "pk": 43, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_mois", 
+        "name": "Can add mois", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 44, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_mois", 
+        "name": "Can change mois", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 45, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_mois", 
+        "name": "Can delete mois", 
+        "content_type": 15
+    }
+},
+{
+    "pk": 46, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_planmensuel", 
+        "name": "Can add plan mensuel", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 47, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_planmensuel", 
+        "name": "Can change plan mensuel", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 48, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_planmensuel", 
+        "name": "Can delete plan mensuel", 
+        "content_type": 16
+    }
+},
+{
+    "pk": 49, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_elementmensuel", 
+        "name": "Can add element mensuel", 
+        "content_type": 17
+    }
+},
+{
+    "pk": 50, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_elementmensuel", 
+        "name": "Can change element mensuel", 
+        "content_type": 17
+    }
+},
+{
+    "pk": 51, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_elementmensuel", 
+        "name": "Can delete element mensuel", 
+        "content_type": 17
+    }
+},
+{
+    "pk": 52, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_themes", 
+        "name": "Can add themes", 
+        "content_type": 18
+    }
+},
+{
+    "pk": 53, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_themes", 
+        "name": "Can change themes", 
+        "content_type": 18
+    }
+},
+{
+    "pk": 54, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_themes", 
+        "name": "Can delete themes", 
+        "content_type": 18
+    }
+},
+{
+    "pk": 55, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_activiteb", 
+        "name": "Can add activite b", 
+        "content_type": 19
+    }
+},
+{
+    "pk": 56, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_activiteb", 
+        "name": "Can change activite b", 
+        "content_type": 19
+    }
+},
+{
+    "pk": 57, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_activiteb", 
+        "name": "Can delete activite b", 
+        "content_type": 19
+    }
+},
+{
+    "pk": 58, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_lignebudget", 
+        "name": "Can add ligne budget", 
+        "content_type": 20
+    }
+},
+{
+    "pk": 59, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_lignebudget", 
+        "name": "Can change ligne budget", 
+        "content_type": 20
+    }
+},
+{
+    "pk": 60, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_lignebudget", 
+        "name": "Can delete ligne budget", 
+        "content_type": 20
+    }
+},
+{
+    "pk": 61, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_operation", 
+        "name": "Can add operation", 
+        "content_type": 21
+    }
+},
+{
+    "pk": 62, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_operation", 
+        "name": "Can change operation", 
+        "content_type": 21
+    }
+},
+{
+    "pk": 63, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_operation", 
+        "name": "Can delete operation", 
+        "content_type": 21
+    }
+},
+{
+    "pk": 64, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "add_logentry", 
+        "name": "Can add log entry", 
+        "content_type": 22
+    }
+},
+{
+    "pk": 65, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "change_logentry", 
+        "name": "Can change log entry", 
+        "content_type": 22
+    }
+},
+{
+    "pk": 66, 
+    "model": "auth.permission", 
+    "fields": {
+        "codename": "delete_logentry", 
+        "name": "Can delete log entry", 
+        "content_type": 22
+    }
+},
+{
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "nmtsylla", 
+        "first_name": "Babacar", 
+        "last_name": "Sylla", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-06-24T23:37:03Z", 
+        "groups": [], 
+        "user_permissions": [
+            4, 
+            5, 
+            6, 
+            1, 
+            2, 
+            3, 
+            7, 
+            8, 
+            9, 
+            10, 
+            11, 
+            12, 
+            19, 
+            20, 
+            13, 
+            14, 
+            15, 
+            16, 
+            17, 
+            18
+        ], 
+        "password": "pbkdf2_sha256$10000$FDSo1UntEXU1$S9u50JggckN9m0hCr5rYXCniyRKK2UhEZ2AMm0kKAuo=", 
+        "email": "", 
+        "date_joined": "2013-06-24T15:44:41Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "nmt", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-06-24T22:43:37Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$FDSo1UntEXU1$S9u50JggckN9m0hCr5rYXCniyRKK2UhEZ2AMm0kKAuo=", 
+        "email": "nmt@nmt.com", 
+        "date_joined": "2013-06-24T18:36:06Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.profile", 
+    "fields": {
+        "pays": 2, 
+        "user": 1
+    }
+},
+{
+    "pk": 1, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T22:56:56Z", 
+        "object_repr": "Ann\u00e9e 2013", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 13
+    }
+},
+{
+    "pk": 2, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T22:57:44Z", 
+        "object_repr": "Mois", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 15
+    }
+},
+{
+    "pk": 3, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T22:58:15Z", 
+        "object_repr": "MAIS", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 15
+    }
+},
+{
+    "pk": 4, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T22:59:23Z", 
+        "object_repr": "Juillet", 
+        "object_id": "3", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 15
+    }
+},
+{
+    "pk": 5, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:00:09Z", 
+        "object_repr": "Developpement des TIC", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 11
+    }
+},
+{
+    "pk": 6, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:00:45Z", 
+        "object_repr": "100000000", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 12
+    }
+},
+{
+    "pk": 7, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:01:56Z", 
+        "object_repr": "PlanAnn\u00e9e 2013", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 14
+    }
+},
+{
+    "pk": 8, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:02:34Z", 
+        "object_repr": "fr", 
+        "object_id": "3", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 7
+    }
+},
+{
+    "pk": 9, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:02:44Z", 
+        "object_repr": "en", 
+        "object_id": "4", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 7
+    }
+},
+{
+    "pk": 10, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:03:01Z", 
+        "object_repr": "pg", 
+        "object_id": "5", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 7
+    }
+},
+{
+    "pk": 11, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:03:16Z", 
+        "object_repr": "es", 
+        "object_id": "6", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 7
+    }
+},
+{
+    "pk": 12, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 3, 
+        "action_time": "2013-06-24T23:03:42Z", 
+        "object_repr": "en", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 7
+    }
+},
+{
+    "pk": 13, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 3, 
+        "action_time": "2013-06-24T23:03:49Z", 
+        "object_repr": "fr", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 7
+    }
+},
+{
+    "pk": 14, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:05:41Z", 
+        "object_repr": "Senegal", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 9
+    }
+},
+{
+    "pk": 15, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:06:17Z", 
+        "object_repr": "nmtsylla", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 10
+    }
+},
+{
+    "pk": 16, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:06:55Z", 
+        "object_repr": "TIC", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 18
+    }
+},
+{
+    "pk": 17, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 3, 
+        "action_time": "2013-06-24T23:08:22Z", 
+        "object_repr": "TIC", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 18
+    }
+},
+{
+    "pk": 18, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:08:39Z", 
+        "object_repr": "Participation politique", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 18
+    }
+},
+{
+    "pk": 19, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:08:47Z", 
+        "object_repr": "Sensibilisation du public & renforcement de la coalition", 
+        "object_id": "3", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 18
+    }
+},
+{
+    "pk": 20, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:08:54Z", 
+        "object_repr": "Initiatives de recherche, de suivi et de plaidoyer de haut niveau", 
+        "object_id": "4", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 18
+    }
+},
+{
+    "pk": 21, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:09:04Z", 
+        "object_repr": "Apprentissage transfrontalier et cr\u00e9ation de r\u00e9seaux pour le changement ", 
+        "object_id": "5", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 18
+    }
+},
+{
+    "pk": 22, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 2, 
+        "action_time": "2013-06-24T23:11:10Z", 
+        "object_repr": "MAI", 
+        "object_id": "2", 
+        "change_message": "Modifi\u00e9 libelle_mois.", 
+        "user": 1, 
+        "content_type": 15
+    }
+},
+{
+    "pk": 23, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 2, 
+        "action_time": "2013-06-24T23:11:20Z", 
+        "object_repr": "Juin", 
+        "object_id": "1", 
+        "change_message": "Modifi\u00e9 libelle_mois.", 
+        "user": 1, 
+        "content_type": 15
+    }
+},
+{
+    "pk": 24, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:11:59Z", 
+        "object_repr": "Libelle du mois de juin", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 16
+    }
+},
+{
+    "pk": 25, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:13:41Z", 
+        "object_repr": "Depense technques ", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 17
+    }
+},
+{
+    "pk": 26, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:14:42Z", 
+        "object_repr": "Invesstissements ressources humaines", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 17
+    }
+},
+{
+    "pk": 27, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:16:47Z", 
+        "object_repr": "Achat materiels informatiques", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 19
+    }
+},
+{
+    "pk": 28, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:17:16Z", 
+        "object_repr": "Formation des futurs formateurs", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 19
+    }
+},
+{
+    "pk": 29, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:19:14Z", 
+        "object_repr": "Ligne budget depense technique", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 20
+    }
+},
+{
+    "pk": 30, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:19:53Z", 
+        "object_repr": "Voyage de formation", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 20
+    }
+},
+{
+    "pk": 31, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:24:09Z", 
+        "object_repr": "Demarche papiers et titre de voyage", 
+        "object_id": "1", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 21
+    }
+},
+{
+    "pk": 32, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:25:22Z", 
+        "object_repr": "Achat billets pour voyage", 
+        "object_id": "2", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 21
+    }
+},
+{
+    "pk": 33, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:27:00Z", 
+        "object_repr": "Reservation hotel Las grandes villas des reposs", 
+        "object_id": "3", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 21
+    }
+},
+{
+    "pk": 34, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:28:07Z", 
+        "object_repr": "Prospection march\u00e9 des distributeurs", 
+        "object_id": "4", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 21
+    }
+},
+{
+    "pk": 35, 
+    "model": "admin.logentry", 
+    "fields": {
+        "action_flag": 1, 
+        "action_time": "2013-06-24T23:29:44Z", 
+        "object_repr": "Achats serveurs intel px-12", 
+        "object_id": "5", 
+        "change_message": "", 
+        "user": 1, 
+        "content_type": 21
+    }
+}
+]
