@@ -1,0 +1,268 @@
+{% extends "frontoffice/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li><a href="{% url 'frontoffice.views.suivi_budget' %}">{% trans 'Suivi budget' %}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class=" element_centre_statistique col_10">
+        <table class="sortable striped">
+            <caption>
+                <h6 class="bloc100  blue_menu">Budget Projet general</h6>
+            </caption>
+            <thead>
+            <tr class="alt first last ">
+                <th><input type="checkbox" /></th>
+                <th>Theme</th>
+                <th>{% trans 'Montant prévu' %}</th>
+                <th>{% trans 'Montant exécuté' %}</th>
+                <th>{% trans 'Montant restant' %}</th>
+                <th>{% trans 'Pourcentage' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for th in themes %}
+                <tr>
+                    <td ></td>
+                    <td style="width: 24%"><strong>{{ th.libelle }}</strong></td>
+                    <td style="width: 24%">{{ th.montantPrevu }}</td>
+                    <td style="width: 24%">{{ th.montantExecute }}</td>
+                    <td style="width: 24%">{{ th.montantRestant }}</td>
+                    <td style="width: 24%">{{ th.pourcentage }}%</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr class="">
+                    <td ></td>
+                    <td ></td>
+                    <td  class="bordure">
+                        Total prévu
+                    </td>
+                    <td class="bordure">
+                        Total exécuté
+                    </td>
+                    <td class="bordure">
+                        Total restant
+                    </td>
+                    <td ></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <hr>
+    <div class="element_centre_statistique col_10 bar">
+        <a href="#" onclick="masquerTab('bq1',document.getElementById('opbq1').value,'opbq1');"><span class="col_2 icon-arrow-down fsize30 sourismain" ></span>
+        </a>
+        <table class="sortable striped">
+            <caption>
+                <h6 class="bloc100  blue_menu">Budget Quartille 1</h6>
+            </caption>
+            <thead>
+                <tr class="alt first last ">
+                    <th><input type="checkbox" /></th>
+                    <th>Theme</th>
+                    <th>{% trans 'Montant prévu' %}</th>
+                    <th>{% trans 'Montant exécuté' %}</th>
+                    <th>{% trans 'Montant restant' %}</th>
+                    <th>{% trans 'Pourcentage' %}</th>
+                </tr>
+            </thead>
+            <tbody id="bq1">
+            {% for th in activites %}
+                <tr>
+                    <td ></td>
+                    <td style="width: 24%"><strong>{{ th.libelle }}</strong></td>
+                    <td style="width: 24%">{{ th.montantPrevu }}</td>
+                    <td style="width: 24%">{{ th.montantExecute }}</td>
+                    <td style="width: 24%">{{ th.montantRestant }}</td>
+                    <td style="width: 24%">{{ th.pourcentage }}%</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr class="">
+                <td ></td>
+                <td ></td>
+                <td  class="bordure">
+                    Total prévu
+                </td>
+                <td class="bordure">
+                    Total exécuté
+                </td>
+                <td class="bordure">
+                    Total restant
+                </td>
+                <td ></td>
+            </tr>
+            </tfoot>
+            <input type="hidden" name="opbq1" id="opbq1" value="mask" />
+        </table>
+
+        <br/>
+        <img  class="col_12" src="{% static 'img/separateur.png' %}" height="4"  />
+        <br/>
+        <a href="#" onclick="masquerTab('bq2',document.getElementById('opbq2').value,'opbq2');"><span class="col_1 icon-arrow-down fsize30 sourismain" ></span>
+        </a>
+
+        <table class="sortable striped">
+            <caption>
+                <h6 class="bloc100  blue_menu">Budget Quartille 2</h6>
+            </caption>
+            <thead>
+            <tr class="alt first last ">
+                <th><input type="checkbox" /></th>
+                <th>Theme</th>
+                <th>{% trans 'Montant prévu' %}</th>
+                <th>{% trans 'Montant exécuté' %}</th>
+                <th>{% trans 'Montant restant' %}</th>
+                <th>{% trans 'Pourcentage' %}</th>
+            </tr>
+            </thead>
+            <tbody id="bq2">
+                <tr>
+                    <td ></td>
+                    <td style="width: 24%"><strong></strong></td>
+                    <td style="width: 24%"></td>
+                    <td style="width: 24%"></td>
+                    <td style="width: 24%"></td>
+                    <td style="width: 24%">%</td>
+                </tr>
+            </tbody>
+            <tfoot>
+            <tr class="">
+                <td ></td>
+                <td ></td>
+                <td  class="bordure">
+                    Total prévu
+                </td>
+                <td class="bordure">
+                    Total exécuté
+                </td>
+                <td class="bordure">
+                    Total restant
+                </td>
+                <td ></td>
+            </tr>
+            </tfoot>
+            <input type="hidden" name="opbq2" id="opbq2" value="mask" />
+        </table>
+
+        <br/>
+        <img  class="col_12" src="{% static 'img/separateur.png' %}" height="4"  />
+        <br/>
+        <a href="#" onclick="masquerTab('bq3',document.getElementById('opbq3').value,'opbq3');"><span class="col_1 icon-arrow-down fsize30 sourismain" ></span>
+        </a>
+
+        <table class="sortable striped">
+            <caption>
+                <h6 class="bloc100  blue_menu">Budget Quartille 3</h6>
+            </caption>
+            <thead>
+            <tr class="alt first last ">
+                <th><input type="checkbox" /></th>
+                <th>Theme</th>
+                <th>{% trans 'Montant prévu' %}</th>
+                <th>{% trans 'Montant exécuté' %}</th>
+                <th>{% trans 'Montant restant' %}</th>
+                <th>{% trans 'Pourcentage' %}</th>
+            </tr>
+            </thead>
+            <tbody id="bq3">
+            <tr>
+                <td ></td>
+                <td style="width: 24%"><strong></strong></td>
+                <td style="width: 24%"></td>
+                <td style="width: 24%"></td>
+                <td style="width: 24%"></td>
+                <td style="width: 24%">%</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="">
+                <td ></td>
+                <td ></td>
+                <td  class="bordure">
+                    Total prévu
+                </td>
+                <td class="bordure">
+                    Total exécuté
+                </td>
+                <td class="bordure">
+                    Total restant
+                </td>
+                <td ></td>
+            </tr>
+            </tfoot>
+            <input type="hidden" name="opbq3" id="opbq3" value="mask" />
+        </table>
+
+        <br/>
+        <img  class="col_12" src="{% static 'img/separateur.png' %}" height="4"  />
+        <br/>
+        <a href="#" onclick="masquerTab('bq4',document.getElementById('opbq4').value,'opbq4');"><span class="col_1 icon-arrow-down fsize30 sourismain" ></span>
+        </a>
+
+        <table class="sortable striped">
+            <caption>
+                <h6 class="bloc100  blue_menu">Budget Quartille 4</h6>
+            </caption>
+            <thead>
+            <tr class="alt first last ">
+                <th><input type="checkbox" /></th>
+                <th>Theme</th>
+                <th>{% trans 'Montant prévu' %}</th>
+                <th>{% trans 'Montant exécuté' %}</th>
+                <th>{% trans 'Montant restant' %}</th>
+                <th>{% trans 'Pourcentage' %}</th>
+            </tr>
+            </thead>
+            <tbody id="bq4">
+            <tr>
+                <td ></td>
+                <td style="width: 24%"><strong></strong></td>
+                <td style="width: 24%"></td>
+                <td style="width: 24%"></td>
+                <td style="width: 24%"></td>
+                <td style="width: 24%">%</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="">
+                <td ></td>
+                <td ></td>
+                <td  class="bordure">
+                    Total prévu
+                </td>
+                <td class="bordure">
+                    Total exécuté
+                </td>
+                <td class="bordure">
+                    Total restant
+                </td>
+                <td ></td>
+            </tr>
+            </tfoot>
+            <input type="hidden" name="opbq4" id="opbq4" value="mask" />
+        </table>
+    <hr>
+        <div class="col_10">
+            <div class="col_4 ">
+                <p class="col_6">
+                    <span class="icon-download fsize45"> </span>
+                    <br/>
+                    <span> Générer Etat</span>
+                </p>
+                <p class="col_6">
+                    <span class="icon-print fsize45"> </span>
+                    <br/>
+                    <span> Imprimer Opération </span>
+                </p>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

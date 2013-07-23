@@ -1,0 +1,507 @@
+[
+{
+    "pk": 3, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "fr", 
+        "nom_langue": "Fran\u00e7ais"
+    }
+},
+{
+    "pk": 4, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "en", 
+        "nom_langue": "English"
+    }
+},
+{
+    "pk": 5, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "pg", 
+        "nom_langue": "Portugese"
+    }
+},
+{
+    "pk": 6, 
+    "model": "frontoffice.langue", 
+    "fields": {
+        "code_langue": "es", 
+        "nom_langue": "Espaniol"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.monnaie", 
+    "fields": {
+        "nom_devise": "Franc CFA", 
+        "signe": "F CFA"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.countriesinfos", 
+    "fields": {
+        "langue": 3, 
+        "country": "Senegal", 
+        "complete_name": "Coalition des Oraganisations en Synergie pour la D\u00e9fense de l'Education Publique", 
+        "short_name": "COSYDEP", 
+        "currency": 1
+    }
+},
+{
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+        "username": "nmtsylla",
+        "password": "massilia",
+        "email": "niamatosylla@gmail.com"
+    }
+},
+{
+    "pk": 2,
+    "model": "frontoffice.profile", 
+    "fields": {
+        "pays": 2, 
+        "user": 1
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.projet", 
+    "fields": {
+        "nom_de_code": "Developpement des TIC"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.budgetprojet", 
+    "fields": {
+        "project": 1, 
+        "montantExecute": 0, 
+        "montantDemande": 100000000, 
+        "montantAttribue": 90000000, 
+        "montantRestant": 90000000
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.anneecomptable", 
+    "fields": {
+        "etat": "ouverte", 
+        "libelle_annee": "Ann\u00e9e 2013", 
+        "code_annee": "2013"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.planannuel", 
+    "fields": {
+        "montant_total_prevu": 90000000, 
+        "libelle_annee": "PlanAnn\u00e9e 2013", 
+        "budgetProjet": 1, 
+        "code_annee": "PA2013"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.mois", 
+    "fields": {
+        "etat": "ouvert", 
+        "annee": 1, 
+        "code_mois": "JN2013", 
+        "libelle_mois": "Juin"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.mois", 
+    "fields": {
+        "etat": "ouvert", 
+        "annee": 1, 
+        "code_mois": "MAI2013", 
+        "libelle_mois": "MAI"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.mois", 
+    "fields": {
+        "etat": "ouvert", 
+        "annee": 1, 
+        "code_mois": "JL2013", 
+        "libelle_mois": "Juillet"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.planmensuel", 
+    "fields": {
+        "libelle": "Libelle du mois de juin", 
+        "annee_comptable": 1, 
+        "code": "CPMJUIN2013", 
+        "mois": 1
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.elementmensuel", 
+    "fields": {
+        "code": "EMJUIN2013", 
+        "libelle_element_mensuel": "Depense technques ", 
+        "planmensuel": 1, 
+        "montant": 20000000.0
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.elementmensuel", 
+    "fields": {
+        "code": "EM1JUIN2013", 
+        "libelle_element_mensuel": "Invesstissements ressources humaines", 
+        "planmensuel": 1, 
+        "montant": 10000000.0
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Participation politique"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Sensibilisation du public & renforcement de la coalition"
+    }
+},
+{
+    "pk": 4, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Initiatives de recherche, de suivi et de plaidoyer de haut niveau"
+    }
+},
+{
+    "pk": 5, 
+    "model": "frontoffice.themes", 
+    "fields": {
+        "libelle_theme": "Apprentissage transfrontalier et cr\u00e9ation de r\u00e9seaux pour le changement "
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.activiteb", 
+    "fields": {
+        "libelle_activite": "Achat materiels informatiques", 
+        "theme": 4, 
+        "dateDebut": "2013-06-24", 
+        "dateFin": "2013-06-20", 
+        "montantPrevu": 15000000
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.activiteb", 
+    "fields": {
+        "libelle_activite": "Formation des futurs formateurs", 
+        "theme": 3, 
+        "dateDebut": "2013-06-24", 
+        "dateFin": "2013-07-14", 
+        "montantPrevu": 10000000
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.activiteb", 
+    "fields": {
+        "libelle_activite": "Test avec 2activit\u00e9", 
+        "theme": 3, 
+        "dateDebut": "2013-07-03", 
+        "dateFin": "2013-07-26", 
+        "montantPrevu": 50000
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.lignebudget", 
+    "fields": {
+        "montantExecute": 14000000, 
+        "elementPlanMensuel": 1, 
+        "activite": 1, 
+        "libelle_ligne": "Ligne budget depense technique", 
+        "montantPrevu": 15000000
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.lignebudget", 
+    "fields": {
+        "montantExecute": 9600000, 
+        "elementPlanMensuel": 2, 
+        "activite": 2, 
+        "libelle_ligne": "Voyage de formation", 
+        "montantPrevu": 10000000
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "RFT-1223", 
+        "date_operation": "2013-06-03", 
+        "memo": "passport, visites medicales...", 
+        "somme_operation": 500000, 
+        "libelle_operation": "Demarche papiers et titre de voyage", 
+        "ligne_budget": 2, 
+        "soumission": "Valid\u00e9e"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "EDS-122", 
+        "date_operation": "2013-06-24", 
+        "memo": "air france", 
+        "somme_operation": 3500000, 
+        "libelle_operation": "Achat billets pour voyage", 
+        "ligne_budget": 2, 
+        "soumission": "Valid\u00e9e"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "HT-SDS", 
+        "date_operation": "2013-06-24", 
+        "memo": "paiement a lavance", 
+        "somme_operation": 4000000, 
+        "libelle_operation": "Reservation hotel Las grandes villas des reposs", 
+        "ligne_budget": 2, 
+        "soumission": "Rejett\u00e9e"
+    }
+},
+{
+    "pk": 4, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "121-REZZ", 
+        "date_operation": "2013-06-24", 
+        "memo": "visites, contacts des grands fournisseurs", 
+        "somme_operation": 30000, 
+        "libelle_operation": "Prospection march\u00e9 des distributeurs", 
+        "ligne_budget": 1, 
+        "soumission": "Valid\u00e9e"
+    }
+},
+{
+    "pk": 5, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "ZEZEEDS-122", 
+        "date_operation": "2013-06-06", 
+        "memo": "icore7, 64go ram, disk ssd 1To", 
+        "somme_operation": 5000000, 
+        "libelle_operation": "Achats serveurs intel px-12", 
+        "ligne_budget": 1, 
+        "soumission": "En attente"
+    }
+},
+{
+    "pk": 6, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "RFT-1223", 
+        "date_operation": "2013-06-24", 
+        "memo": "icore7, 64go ram, disk ssd 1To", 
+        "somme_operation": 3500000, 
+        "libelle_operation": "Demarche papiers et titre de voyage", 
+        "ligne_budget": 1, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 7, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "HT-SDS", 
+        "date_operation": "2013-06-03", 
+        "memo": "rien", 
+        "somme_operation": 1234000, 
+        "libelle_operation": "Disque dur 2To", 
+        "ligne_budget": 1, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 8, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "AAZAZ-123", 
+        "date_operation": "2013-06-27", 
+        "memo": "rien", 
+        "somme_operation": 250000, 
+        "libelle_operation": "Achats imprimante ", 
+        "ligne_budget": 2, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 9, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "76543", 
+        "date_operation": "2013-06-30", 
+        "memo": "ab macbook pro", 
+        "somme_operation": 450000, 
+        "libelle_operation": "dieundam ordi", 
+        "ligne_budget": 1, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 10, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "76543", 
+        "date_operation": "2013-06-30", 
+        "memo": "ab macbook pro", 
+        "somme_operation": 450000, 
+        "libelle_operation": "dieundam ordi", 
+        "ligne_budget": 1, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 11, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "76543", 
+        "date_operation": "2013-06-30", 
+        "memo": "ab macbook pro", 
+        "somme_operation": 450000, 
+        "libelle_operation": "dieundam ordi", 
+        "ligne_budget": 1, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 14, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "POIU-43", 
+        "date_operation": "2013-07-04", 
+        "memo": "8go couleur blanc", 
+        "somme_operation": 250000, 
+        "libelle_operation": "iphone 4GS", 
+        "ligne_budget": 1, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 15, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "HGFDF-54", 
+        "date_operation": "2013-07-05", 
+        "memo": "2 chambres en attendant vol vers NY", 
+        "somme_operation": 300000, 
+        "libelle_operation": "hotel sea plaza", 
+        "ligne_budget": 2, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 17, 
+    "model": "frontoffice.operation", 
+    "fields": {
+        "reference_paiement": "NNNBB", 
+        "date_operation": "2013-08-24", 
+        "memo": "sony ", 
+        "somme_operation": 25000, 
+        "libelle_operation": "cl\u00e9 usb 32go", 
+        "ligne_budget": 1, 
+        "soumission": "Brouillon"
+    }
+},
+{
+    "pk": 3, 
+    "model": "frontoffice.operationbancaire", 
+    "fields": {
+        "type_operation_bancaire": "virement", 
+        "reference_operation": "AZDS121212"
+    }
+},
+{
+    "pk": 4, 
+    "model": "frontoffice.operationbancaire", 
+    "fields": {
+        "type_operation_bancaire": "virement", 
+        "reference_operation": "6543JNHBGFC"
+    }
+},
+{
+    "pk": 5, 
+    "model": "frontoffice.operationbancaire", 
+    "fields": {
+        "type_operation_bancaire": "cheque", 
+        "reference_operation": "MPMPM"
+    }
+},
+{
+    "pk": 7, 
+    "model": "frontoffice.operationbancaire", 
+    "fields": {
+        "type_operation_bancaire": "cheque", 
+        "reference_operation": "1245UHGFDSD"
+    }
+},
+{
+    "pk": 14, 
+    "model": "frontoffice.operationbancaire", 
+    "fields": {
+        "type_operation_bancaire": "Cheque", 
+        "reference_operation": "5543344"
+    }
+},
+{
+    "pk": 1, 
+    "model": "frontoffice.operationcaisse", 
+    "fields": {
+        "numRecu": "12345"
+    }
+},
+{
+    "pk": 2, 
+    "model": "frontoffice.operationcaisse", 
+    "fields": {
+        "numRecu": "123456"
+    }
+},
+{
+    "pk": 6, 
+    "model": "frontoffice.operationcaisse", 
+    "fields": {
+        "numRecu": "343434"
+    }
+},
+{
+    "pk": 8, 
+    "model": "frontoffice.operationcaisse", 
+    "fields": {
+        "numRecu": "99"
+    }
+},
+{
+    "pk": 17, 
+    "model": "frontoffice.operationcaisse", 
+    "fields": {
+        "numRecu": "12344"
+    }
+}
+]

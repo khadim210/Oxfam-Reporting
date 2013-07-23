@@ -1,0 +1,177 @@
+{% extends 'frontoffice/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'formulaire.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/jquery-ui-1.10.3.custom.css' %}"/>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/add_op.js' %}"></script>
+    <script type="text/javascript">
+
+        $('#id_date_operation').datepicker();
+    </script>
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li> <a href="{% url 'frontoffice.views.gestion_op' %}">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</a></li>
+    <li><a href="{% url 'frontoffice.views.add_caisse_op' %}">{% trans 'Ajouter operation' as add_op %} {{ add_op }}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="col_12">
+        <span class="col_4"><br />{% trans 'Info budget' as inf_budg_trans %} {{ inf_budg_trans }}</span>
+        <div class="col_4 ">
+            <div class="notice "> {% trans 'Période en cours :' as perio_trans%} {{ perio_trans }} {% now "m / Y" %}</div>
+        </div>
+    </div>
+    <img  class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}" />
+
+    <div class="col_12 ">
+        <div class="notice  col_4 fright txtalignright"> {% trans 'Budget Restant Ligne :' as bud_res_trans %} {{ bud_res_trans }} <span id="rest_ligne"></span> F </div>
+    </div>
+    <div class="col_12 ">
+        <div class="col_5 ">
+            <label  class="col_4" for="id_theme"> {% trans 'Choix du Thème' as choix_them %} {{ choix_them }}</label>
+            <select  class="col_7 fright" id="id_theme" >
+                <option value="">-- Liste thèmes  --</option>
+                {% for theme in themes %}
+                    <option value="{{ theme.id }}">{{ theme.libelle_theme }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="col_12 ">
+        <div class="col_5 ">
+            <label for="id_rubrique" class="col_4"> {% trans 'Choix rubrique' as ch_rub %} {{ ch_rub }}</label>
+            <select  class="col_7 fright" id="id_rubrique" disabled="disabled">
+                <option value="">-- Liste rubriques  --</option>
+            </select>
+        </div>
+        <div class="col_2">
+        </div>
+        <div class="col_5">
+            <label class="col_4" for="id_ligne"> {% trans 'Choix ligne' as choi_lign %} {{ choi_lign }}</label>
+            <select class="col_7 fright" id="id_ligne" name="ligne_budget_id" disabled="disabled">
+                <option value="">-- Liste lignes budgétaires  --</option>
+            </select>
+        </div>
+    </div>
+    <div id="detail_op">
+        <div class="col_12">
+            <span class="col_4"><br/>{% trans 'Infos opération' as inf_op %} {{ inf_op }}</span>
+        </div>
+        <img  class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}" />
+        <div class="col_12 ">
+            <div class="notice  col_4 fright txtalignright">{% trans 'Numéro opération' as num_op %} {{ num_op }}</div>
+        </div>
+        <div class="col_12 center">
+            {% if type_op == 'banque' %}
+                <form action="{% url 'frontoffice.views.add_bank_op' %}" method="post" class="af-form" id="af-form">
+            {% else %}
+                <form action="{% url 'frontoffice.views.add_caisse_op' %}" method="post" class="af-form" id="af-form">
+            {% endif %}
+               {% csrf_token %}
+                <div class="af-outer af-required">
+                    <div class="af-inner">
+                        <label for="id_libelle_operation" {% if form1.libelle_operation.errors %} class="error" {% endif %}>Opération:</label>
+                        <input id="id_libelle_operation" maxlength="100" name="libelle_operation" type="text"/>
+                        {% if form1.libelle_operation.errors %}
+                            <span class="error">{{ form1.libelle_operation.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="af-outer af-required">
+                    <div class="af-inner">
+                        <label for="id_date_operation" {% if form1.date_operation.errors %} class="error" {% endif %}>Date opération:</label>
+                        <input id="id_date_operation" name="date_operation" type="text"/>
+                        {% if form1.date_operation.errors %}
+                            <p class="error">{{ form1.date_operation.errors }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="af-outer af-required">
+                    <div class="af-inner">
+                        <label for="id_somme_operation" {% if form1.somme_operation.errors %} class="error" {% endif %}>Montant opération:</label>
+                        <input id="id_somme_operation" name="somme_operation" type="text" value="0"/>
+                        {% if form1.somme_operation.errors %}
+                            <span class="error">{{ form1.somme_operation.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="af-outer af-required">
+                    <div class="af-inner">
+                        <label for="id_memo" {% if form1.memo.errors %} class="error" {% endif %}>Note:</label>
+                        <textarea id="id_memo" name="memo"></textarea>
+                        {% if form1.memo.errors %}
+                            <span class="error">{{ form1.memo.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="af-outer af-required">
+                    <div class="af-inner">
+                        <label for="id_reference_paiement" {% if form1.reference_paiement.errors %} class="error" {% endif %}>Reférence paiement:</label>
+                        <input id="id_reference_paiement" maxlength="50" name="reference_paiement" type="text">
+                        {% if form1.reference_paiement.errors %}
+                            <span class="error">{{ form1.reference_paiement.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if type_op == 'banque' %}
+                    <div class="af-outer af-required">
+                        <div class="af-inner">
+                            <label for="id_reference_operation" {% if form1.reference_operation.errors %} class="error" {% endif %}>Référence de l'opération:</label>
+                        <input id="id_reference_operation" maxlength="50" name="reference_operation" type="text">
+                            {% if form1.reference_operation.errors %}
+                                <span class="error">{{ form1.reference_operation.errors }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="af-outer af-required">
+                        <div class="af-inner">
+                            <label for="id_type_operation_bancaire" {% if form1.type_operation_bancaire.errors %} class="error" {% endif %}>Type d'opération bancaire:</label>
+                            <select id="id_type_operation_bancaire" name="type_operation_bancaire">
+                                <option value="" selected="selected">---------</option>
+                                <option value="0">Virement</option>
+                                <option value="1">Cheque</option>
+                            </select>
+                            {% if form1.type_operation_bancaire.errors %}
+                                <span class="error">{{ form1.type_operation_bancaire.errors }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% elif type_op == 'caisse' %}
+                    <div class="af-outer af-required">
+                        <div class="af-inner">
+                            <label for="id_numRecu" {% if form1.numRecu.errors %} class="error" {% endif %}>Numéro reçu:</label>
+                            <input id="id_numRecu" name="numRecu" type="text" class="txtinput"/>
+                            {% if form1.numRecu.errors %}
+                                <span class="error">{{ form1.numRecu.errors }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                <input type="hidden" name="ligne" value="" id="ligne"/>
+                <input type="submit" value="Valider" name="Valider" id="valider"/>
+            </form>
+        </div>
+    </div>
+    <div id="dialog-message" title="Choix incomplet">
+        <p>{% trans "Veuillez faire un choix(Theme, activite ou ligne budgetaire)" %}</p>
+    </div>
+    {% comment %}<script type="text/javascript">
+        $('#id_date_operation').datepicker();
+    </script>{% endcomment %}
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+{% extends 'frontoffice/base.html' %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% if form.errors %}
+            <p>Verifier les erreurs!</p>
+        {% endif %} 
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+{% endblock %}

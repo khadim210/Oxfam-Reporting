@@ -1,0 +1,93 @@
+{% extends "frontoffice/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block css %}
+{{ block.super }}
+    <link  href="{% static 'styles/jquery-ui-1.8.21.custom.css' %}" rel="Stylesheet" />
+    <style type="text/css">
+    #targetchart { width: 608px; height: 408px; padding: 4px; }
+    #targetchart h3 { text-align: center; margin: 0; }
+    </style>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/jquery-ui-1.8.18.custom.min.js' %}"></script>
+    <script src="{% static 'js/jchartfx.full.js' %}"></script>
+{% endblock %}
+{% block breadcrumbs %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="col_12">
+        <div class="col_8">
+            <div class="col_12">
+                <h6>{% trans 'Dérnieres Operations (Données Dernier Trimestre)' as list_op %} {{ list_op }}</h6>
+                <table class="sortable striped" style="width: 100%;">
+                    <thead>
+                        <tr class="alt first last">
+                        <th>{% trans 'Libelle operation' as lib_op %} {{ lib_op }}</th>
+                        <th>{% trans 'Date' %}</th>
+                        <th>{% trans 'Ligne budget' as ligne_budget %} {{ ligne_budget }}</th>
+                        <th>{% trans 'Montant operation' as mont_op %} {{ mont_op }}</th>
+                        </tr>
+                    </thead>
+                    {% for op in operation %}
+                        <tr>
+                            <td>{{ op.libelle_operation }}</td>
+                            <td>{{ op.date_operation }}</td>
+                            <td>{{ op.libelle_ligne }}</td>
+                            <td>{{ op.somme_operation }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <hr>
+            <div class="center">
+                <h5 class="center">{% trans 'Evolution Compte Banque' as ev_compte_banque %} {{ ev_compte_banque }}</h5>
+                <div class="ChartDiv5 " id="targetchart" style="display:inline-block">
+                    <div id="myDiv" style="width:100%;height:100%;display:inline-block">
+                    </div>
+                </div>
+            </div>
+            <div class="col_6 center">
+                <h5 class="center">{% trans 'Evolution Compte Caisse ' as ev_compte_caisse %} {{ ev_compte_caisse }}</h5>
+                <textarea id="evc" class="col_8" style="width: 100%"></textarea><br>
+            </div>
+        </div>
+        <div class="col_4">
+            <!--<ul style="list-style: none;">
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="{% url 'frontoffice.views.gestion_op' %}">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</a></li>
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="#">{% trans 'Generer Etat' as gen_etat_trans %} {{ gen_etat_trans }}</a></li>
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="{% url 'frontoffice.views.suivi_budget'%}">{% trans 'Suivi budget' as suiv_budg_trans %} {{ suiv_budg_trans }}</a></li>
+                <li><img src="{% static 'img/puce1.png' %}" alt="" class="icon-oxfam"><a href="{% url 'frontoffice.views.statistique' %}">{% trans 'Statistiques Projets' as stat_proj %} {{ stat_proj }}</a></li>
+            </ul>-->
+
+
+
+
+            <table border="0" cellpadding="10px">
+                <tr>
+                    <td><img src="{% static 'images/operation.png' %}" class="frontoffmain_puce"></td>
+                    <td><a href="{% url 'frontoffice.views.gestion_op' %}"><h3 class="couleur_police">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</h3></a></td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/etats.png' %}" class="frontoffmain_puce"></td>
+                    <td><a href="#"><h3 class="couleur_police">{% trans 'Generer Etat' as gen_etat_trans %} {{ gen_etat_trans }}</h3></a></td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/statistique.jpg' %}" class="frontoffmain_puce"></td>
+                    <td><a href="{% url 'frontoffice.views.statistique' %}"><h3 class="couleur_police">{% trans 'Statistiques Projets' as stat_proj %} {{ stat_proj }}</h3></a></td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/budget.jpg' %}" class="frontoffmain_puce"></td>
+                    <td><a href="{% url 'frontoffice.views.suivi_budget'%}"><h3 class="couleur_police">{% trans 'Suivi budget' as suiv_budg_trans %} {{ suiv_budg_trans }}</h3></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        <script src="{% static 'js/evolutionbudget.js' %}"></script>
+
+{% endblock %}

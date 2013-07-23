@@ -1,0 +1,243 @@
+{% extends "frontoffice/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block css %}
+    {{ block.super }}
+    <link  href="{% static 'css/jquery-ui-1.10.3.custom.css' %}" rel="Stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/demo_table.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/jquery.dataTables.css' %}"/>
+    <style type="text/css">
+        #targetchart { width: 608px; height: 408px; padding: 4px; }
+        #targetchart h3 { text-align: center; margin: 0; }
+    </style>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/tri_tab.js' %}"></script>
+   <!-- <script type="text/javascript" src="{% static 'js/jquery.dataTables.js' %}"></script>-->
+{% endblock %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    <li> <a href="{% url 'frontoffice.views.gestion_op' %}">{% trans 'Gestion Operation' as gest_op_trans %} {{ gest_op_trans }}</a></li>
+{% endblock %}
+
+{% block alerte %}
+    {% if montant_restant < 0 %}
+    {{ block.super }}
+    {% else %}
+        <div class="col_6 fright txtalignright">
+            <div class="notice error"><i class="icon-remove-sign icon-large"></i> {% trans 'Montant des dépenses superieur au montant prévu!' as alert_trans %} {{ alert_trans }}
+                <a href="#close" class="icon-remove"></a>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <div class="col_4 left txtalignleft">
+        <nav>
+                <a href="{% url 'frontoffice.views.add_caisse_op' %}" >
+                    <span class="icon-plus-sign">{% trans 'Ajouter operation caisse' as ajout_op_trans %} {{ ajout_op_trans }}</span>
+                </a><br>
+                <a href="{% url 'frontoffice.views.add_bank_op' %}" >
+                    <span class="icon-plus-sign"> {% trans 'Ajouter operation bancaire' %}</span>
+                </a><br>
+                <a href="#" >
+                    <span class="icon-plus-sign">{% trans 'Importer operation' as import_op_trans %} {{ import_op_trans }}</span>
+                </a>
+        </nav>
+    </div>
+
+    <div class="col_12">
+        <div class="col_12 bar300">
+            <table class="sortable" id="op_table">
+                <thead>
+                <tr>
+                    <td colspan="2">
+{#                        {% trans 'Filtre couleur:' as color%}{{ color }}#}
+{#                        <select id="filtre" name="filtre_couleur">#}
+{#                            <option value="">Non</option>#}
+{#                            <option value="1">Oui</option>#}
+{#                        </select>#}
+                    </td>
+                    <td >
+                        <select name="tri_mois" id="tri_mois">
+                            <option value="">{% trans 'Mois' %}</option>
+                            {% for k in month_name %}
+                                {% if forloop.counter in date_op %}
+                                    <option value="{{ forloop.counter }}">{{ k|escape }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select name="tri_themes" id="tri_themes">
+                            <option value="">{% trans 'Tous' %}</option>
+                            {% for v in themes %}
+                                <option value="{{ v }}">{{ v }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <select name="tri_etat" id="tri_etat">
+                            <option value="">{% trans 'Tous' %}</option>
+                            <option value="{% trans 'Validée' %}">{% trans 'Validée' %}</option>
+                            <option value="{% trans 'Rejettée' %}">{% trans 'Rejettée' %}</option>
+                            <option value="{% trans 'Soumise' %}">{% trans 'Soumise' %}</option>
+                            <option value="{% trans 'Brouillon' %}">{% trans 'Brouillon' %}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="alt first last ">
+                    <th><input type="checkbox"></th>
+                    <th>{% trans 'Numéro operation' %}</th>
+                    <th>{% trans 'Date opération'  %}</th>
+                    <th>{% trans 'Thème Activité' %}</th>
+                    <th>{% trans 'Rubrique' %}</th>
+                    <th>{% trans 'Ligne budgetaire' %}</th>
+                    <th>{% trans 'Montant opération' %}</th>
+                    <th>{% trans 'Etat soumission'%}</th>
+                </tr>
+                </thead>
+                <tbody id="bq{{ id_tab|add:1 }}" class="filter_table">
+                {% comment %}{% for op in operation %}
+                <tr>
+                    <td><input type="checkbox"/></td>
+                    <td><a href="#">{{ op.id }}</a></td>
+                    <td> {{ op.date_operation }}</td>
+                    <td>{{ op.ligne_budget.activite.theme }}</td>
+                    <td class="theme">{{ op.ligne_budget.activite }}</td>
+                    <td>{{ op.ligne_budget}}</td>
+                    <td>{{ op.somme_operation }}</td>
+                    <td class="soumission">{% trans op.soumission %}</td>
+                </tr>
+                {% endfor %}{% endcomment %}
+                {% for op in opp_sql %}
+                    <tr class="cliquable"  onMouseOver="this.bgColor = '#86dc00'; " onMouseOut ="this.bgColor = 'FFFFFF'">
+                        <td>
+                            <input type="checkbox" name="choix[]" class="choix" value="{{ op.id }}"/>
+                        </td>
+                        <td>
+                            {{ op.id }}
+                            <a title="Detail operation" href="{% url 'frontoffice.views.detail_operation' op.id %}">
+                                  <span class="icon-plus"></span>
+                            </a>
+                        </td>
+                        <td class="date_operation">{{ op.date_operation.isoformat }}</td>
+                        <td class="theme">{{ op.libelle_theme }}</td>
+                        <td>{{ op.libelle_activite }}</td>
+                        <td>{{ op.libelle_ligne }}</td>
+                        <td>{{ op.somme_operation }}</td>
+                        <td class="soumission">{% for k in soumission %}
+                            {% if forloop.counter == op.soumission %}
+                                {% trans k %}
+                            {% endif %}
+                        {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <input type="hidden" name="opbq{{ id_tab|add:1 }}" id="opbq{{ id_tab|add:1 }}" value="mask" />
+            </table>
+
+        </div>
+    </div>
+
+    <div class="col_12">
+    <div class="col_5 left txtalignleft">
+        <button class="small blue pill fleft  icon-circle-arrow-right" type="submit" onclick="verif()">{% trans 'Valider Séléction' %}</button>
+        <button class="small blue pill fleft  icon-circle-arrow-right" type="submit" >{% trans 'Supprimer Sélection' %}</button>
+    </div>
+
+    <div class="col_1"> </div>
+
+    <div class="col_6">
+        <div class="fright">
+            <div class="col_12">
+                <span class="col_7">{% trans 'Taux Décaissement Mois' %}</span>
+                <span class="notice  col_5 center" style="clear: none;">{{ pcentage_mois }} %</span>
+            </div>
+            <div class="col_12">
+                <span class="col_7">{% trans 'Taux Décaissement Semestre' %}</span>
+                <span class="notice  col_5 center" style="clear: none;">{{ pcentage_semestre }} %</span>
+            </div>
+            <div class="col_12">
+                <span class="col_7">{% trans 'Taux Décaissement Global' %}</span>
+                <span class="notice  col_5 center" style="clear: none;">{{ pcentage_global }} %</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <img class="col_12 sparatorh2" src="{% static 'img/separateur.png' %}"  />
+
+    <div class="col_4 ">
+
+        <p class="col_6">
+            <span class="icon-download fsize45"> </span>
+            <br/>
+            <span>{% trans 'Générer Etat' %}</span>
+        </p>
+        <p class="col_6">
+            <span class="icon-print fsize45"> </span>
+            <br/>
+            <span>{% trans 'Imprimer Opération' %}</span>
+        </p>
+
+    </div>
+
+    <div class="col_4" style="text-align: center;">
+        <a href="{% url 'frontoffice.views.soumettre' %}" > <span class="icon-dashboard fsize45">
+        </span> </a><br/>
+        {% trans 'Soumettre Données/Période' %}
+    </div>
+
+
+    <script type="text/javascript" src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script type="text/javascript">
+        $('#op_table').find('tr a').each(function() {
+            var $link = $(this);
+            $link.click(function() {
+                var url = $link.attr('href');
+                console.log($link);
+                var $dialog = $('<div id="dialog"></div>').appendTo('body')
+                        .load(url)
+                        .dialog({
+                            autoOpen: false,
+                            modal: true,
+                            title: $link.attr('title'),
+                            width: 550,
+                            height: 350,
+                            close: function(event, ui) {
+                                $("#dialog").remove();
+                            },
+                            buttons: {
+                                "OK": function() {
+                                    $(this).dialog("close");
+                                }
+                            }
+                        });
+                $dialog.dialog('open');
+                return false;
+            });
+        });
+
+        function verif(){
+            $('input[type=checkbox]:checked').each(function(){
+                console.log($(this).val());
+                $.post('gestion_operation/delete_operation/', {id_operation: $(this).val()}, function(data){
+                    if(data == true)
+                        alert("Supprimé");
+                    else
+                        alert("Erreur");
+                });
+                //return false;
+            });
+        }
+    </script>
+{% endblock %}
